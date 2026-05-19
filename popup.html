@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Time Tracker</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      width: 320px;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 16px 0;
+      color: #94a3b8;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+      text-align: center;
+    }
+
+    .overview-card {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #total-time {
+      font-size: 28px;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .site-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .site-list::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .site-list::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+
+    .site-list::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+
+    .site-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e293b;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      transition: background-color 0.2s ease;
+    }
+
+    .site-item:hover {
+      background-color: #334155;
+    }
+
+    .domain {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 170px;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .duration {
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    .no-data {
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+      margin-top: 20px;
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Screen Time</h1>
+
+  <div class="overview-card">
+    <div class="section-title">TODAY'S TOTAL</div>
+    <div id="total-time">0h 0m</div>
+  </div>
+
+  <div class="section-title">TOP SITES</div>
+  <div class="site-list" id="site-list">
+    <!-- Items dynamically injected -->
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
